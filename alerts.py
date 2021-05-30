@@ -6,7 +6,7 @@ LOW_PRIORITY = "low"
 ACTIVE_ALERTS = [
     {
         "id": 1,
-        "active": True,
+        "active": False,
         "priority": HIGH_PRIORITY,
         # yyyy, M,  D,  H,  M,  S, MS
         "timestamp": int((datetime(2021, 3, 24, 0, 0, 0, 0, tzinfo=timezone.utc) - datetime(1970, 1, 1, tzinfo=timezone.utc)).total_seconds() * 1000),
