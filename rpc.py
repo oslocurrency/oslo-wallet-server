@@ -11,7 +11,7 @@ allowed_rpc_actions = ["account_balance", "account_block_count", "account_check"
                        "account_representative", "account_subscribe", "account_weight", "accounts_balances",
                        "accounts_frontiers", "accounts_pending", "available_supply", "block", "block_hash",
                        "blocks", "block_info", "blocks_info", "block_account", "block_count", "block_count_type",
-                       "chain", "delegators", "delegators_count", "frontiers", "frontier_count", "history",
+                       "chain", "frontiers", "frontier_count", "history",
                        "key_expand", "process", "representatives", "republish", "peers", "version", "pending",
                        "pending_exists", "price_data", "fcm_update", "active_difficulty"]
 
