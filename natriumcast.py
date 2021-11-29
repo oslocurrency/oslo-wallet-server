@@ -202,7 +202,7 @@ async def handle_user_message(r : web.Request, message : str, ws : web.WebSocket
             if request_json['action'] == "account_subscribe" and ws is not None:
                 # If account doesnt match the uuid self-heal
                 resubscribe = True
-                if 'uuid' in request_json:
+                if 'uuid' in request_json and request_json['uuid'] is not None:
                     # Perform multi-account upgrade if not already done
                     account = await r.app['rdata'].hget(request_json['uuid'], "account")
                     # No account for this uuid, first subscribe
