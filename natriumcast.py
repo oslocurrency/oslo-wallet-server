@@ -225,7 +225,7 @@ async def handle_user_message(r : web.Request, message : str, ws : web.WebSocket
                                 account_list.append(account.lower())
                                 await r.app['rdata'].hset(request_json['uuid'], "account", json.dumps(account_list))
                 # already subscribed, reconnect (websocket connections)
-                if 'uuid' in request_json and resubscribe:
+                if 'uuid' in request_json and request_json['uuid'] is not None and resubscribe:
                     if uid in r.app['clients']:
                         del r.app['clients'][uid]
                     uid = request_json['uuid']
