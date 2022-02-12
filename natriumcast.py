@@ -44,6 +44,7 @@ try:
     listen_host = str(ipaddress.ip_address(options.host))
     listen_port = int(options.port)
     redis_host = os.getenv('REDIS_HOST', 'localhost')
+    redis_password = os.getenv('REDIS_PASSWORD', '')
     redis_port = 6379
     log_file = options.log_file
     app_path = options.path
@@ -611,7 +612,9 @@ async def init_app():
         """Open redis connections"""
         log.server_logger.info("Opening redis connections")
         app['rdata'] = await aioredis.create_redis_pool((redis_host, redis_port),
-                                                db=int(os.getenv('REDIS_DB', '2')), encoding='utf-8', minsize=2, maxsize=15)
+                                                db=int(os.getenv('REDIS_DB', '2')),
+                                                password=redis_password,
+                                                encoding='utf-8', minsize=2, maxsize=15)
         # Global vars
         app['clients'] = {} # Keep track of connected clients
         app['last_msg'] = {} # Last time a client has sent a message
