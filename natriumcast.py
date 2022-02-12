@@ -56,7 +56,7 @@ try:
         print(f'Starting KALIUM Server (BANANO) {server_desc}')
     else:
         banano_mode = False
-        print(f'Starting NATRIUM Server (NANO) {server_desc}')
+        print(f'Starting OSLIUM Server (OSLO) {server_desc}')
 except Exception as e:
     parser.print_help()
     sys.exit(0)
@@ -491,7 +491,7 @@ async def callback_ws(app: web.Application, data: dict):
                         data['is_send'] = 'true'
                         await app['clients'][sub].send_str(json.dumps(data))
         # Send to natrium donations page
-        if data['block']['subtype'] == 'send' and link == 'nano_1natrium1o3z5519ifou7xii8crpxpk8y65qmkih8e8bpsjri651oza8imdd':
+        if data['block']['subtype'] == 'send' and link == 'oslo_16w53d1ggp137h1eu7n7qrhwc6qxd5qjcnmp1gsb5sypxtyrzzknc7zcic3d':
             log.server_logger.info('Detected send to natrium account')
             if 'amount' in data:
                 log.server_logger.info(f'emitting donation event for amount: {data["amount"]}')
@@ -542,8 +542,8 @@ async def callback(r : web.Request):
                             priority=aiofcm.PRIORITY_HIGH
                 )
                 await fcm.send_message(message)
-            notification_title = f"Received {util.raw_to_nano(send_amount)} {'NANO' if not banano_mode else 'BANANO'}"
-            notification_body = f"Open {'Natrium' if not banano_mode else 'Kalium'} to view this transaction."
+            notification_title = f"Received {util.raw_to_nano(send_amount)} {'OSLO' if not banano_mode else 'BANANO'}"
+            notification_body = f"Open {'Oslium' if not banano_mode else 'Kalium'} to view this transaction."
             for t2 in fcm_tokens_v2:
                 message = aiofcm.Message(
                     device_token = t2,

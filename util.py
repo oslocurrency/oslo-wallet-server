@@ -17,8 +17,8 @@ class Util:
         return host
 
     def address_decode(self, address : str) -> str:
-        """Given a string containing an XRB/NANO/BAN address, confirm validity and provide resulting hex address"""
-        if (address[:4] == 'xrb_' or address[:5] == 'nano_' and not self.banano_mode) or (address[:4] == 'ban_' and self.banano_mode):
+        """Given a string containing an OSLO address, confirm validity and provide resulting hex address"""
+        if (address[:5] == 'oslo_'):
             account_map = "13456789abcdefghijkmnopqrstuwxyz"  # each index = binary value, account_lookup[0] == '1'
             account_lookup = {}
             for i in range(0, 32):  # populate lookup index with prebuilt bitarrays ready to append
