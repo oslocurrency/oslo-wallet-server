@@ -1,8 +1,8 @@
-# Natrium (NANO) and Kalium (BANANO) Wallet Server
+# Oslium (OSLO) Wallet Server
 
-## What is Natrium, Kalium, NANO, BANANO?
+## What is Oslium, OSLO?
 
-Natrium and Kalium are mobile wallets written with Flutter. NANO and BANANO are cryptocurrencies.
+Oslium is a mobile wallet written with Flutter. OSLO is a cryptocurrency.
 
 | Link | Description |
 | :----- | :------ |
@@ -19,7 +19,7 @@ Install requirements on Ubuntu 18.04:
 apt install python3 python3-dev libdpkg-perl virtualenv nginx
 ```
 
-Minimum of one **NANO/BANANO Node** with RPC enabled.
+Minimum of one **OSLO Node** with RPC enabled.
 
 **Redis server** running on the default port 6379
 
